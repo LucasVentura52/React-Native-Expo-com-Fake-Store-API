@@ -24,10 +24,24 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-      <Stack>
+      <Stack
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#bfdbfe",
+          },
+          headerTitleStyle: {
+            color: "#1e3a8a",
+            fontSize: 20,
+            fontWeight: "700",
+          },
+          headerTintColor: "#2563eb",
+          headerTitleAlign: "center",
+          headerShadowVisible: false,
+        }}
+      >
         <Stack.Screen
           name="index"
-          options={{ title: "Login", headerShown: true }}
+          options={{ title: "Login", headerShown: false }}
         />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen
